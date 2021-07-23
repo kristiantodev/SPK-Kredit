@@ -84,7 +84,9 @@ $uri_segment1 = $this->uri->segment(2);
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
+          
+    <?php if ($this->session->userdata('level') == "bagiankredit") { ?>
+      <li class="nav-item menu-open">
             <a href="<?php echo base_url('bagiankredit/dashboard') ?>" class="nav-link <?= $dashboard ?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
                 Dashboard
@@ -128,6 +130,29 @@ $uri_segment1 = $this->uri->segment(2);
             <a href="<?php echo base_url('bagiankredit/kelayakan') ?>" class="nav-link <?= $layak ?>">
               <i class="nav-icon fas fa-columns"></i>&nbsp;
                 Hasil Kelayakan
+            </a>
+          </li>
+
+           <?php }else{ ?>
+            <li class="nav-item menu-open">
+            <a href="<?php echo base_url('pimpinan/dashboard') ?>" class="nav-link <?= $dashboard ?>">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+                Dashboard
+            </a>
+          </li>
+<li class="nav-item">
+            <a href="<?php echo base_url('pimpinan/kelayakan') ?>" class="nav-link <?= $layak ?>">
+              <i class="nav-icon fas fa-columns"></i>&nbsp;
+                Hasil Kelayakan
+            </a>
+          </li>
+
+             <?php } ?>
+
+             <li class="nav-item">
+            <a href="<?php echo base_url(). 'login/logout' ?>" class="nav-link">
+              <i class="nav-icon fas fa-times"></i>&nbsp;
+                Logout
             </a>
           </li>
 
