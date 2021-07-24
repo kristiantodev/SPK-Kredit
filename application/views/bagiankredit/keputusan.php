@@ -97,6 +97,7 @@
                     <td>
                       <?php if ($krt->aproved == "no"){ ?>  
                  <a onclick="deleteConfirm('<?php echo site_url('pimpinan/kelayakan/aproved/'.$krt->id_kredit); ?>')" href="#!" data-toggle="tooltip" class="btn btn-primary waves-effect waves-light tombol-hapus" data-original-title="Aproved"><span class="icon-label" data-toggle="modal" data-target="#modal-danger"><i class="fa fa-check"></i> </span><span class="btn-text"></span></a>
+                 <a onclick="deleteConfirm('<?php echo site_url('pimpinan/kelayakan/aproved/'.$krt->id_kredit); ?>')" href="#!" data-toggle="tooltip" class="btn btn-primary waves-effect waves-light tombol-hapus" data-original-title="Aproved"><span class="icon-label" data-toggle="modal" data-target="#modal-danger"><i class="fa fa-check"></i> </span><span class="btn-text"></span></a>
                  <?php }else{ ?>
                  <button type="button" class="btn btn-success waves-effect waves-light"><font color="white">
                                     <i class="fas fa-check "></i> &nbsp;Aproved</font></button>

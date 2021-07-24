@@ -8,8 +8,11 @@ $nasabah="";
 $bobot="";
 $kredit="";
 $layak="";
+$laporan="";
 
 $uri_segment1 = $this->uri->segment(2);
+$uri_segment2 = $this->uri->segment(1);
+
 
   if($uri_segment1 == "dashboard") {
     $dashboard = "active";
@@ -27,9 +30,12 @@ $uri_segment1 = $this->uri->segment(2);
     $layak = "active";
   }
 
+  if($uri_segment2 == "laporan") {
+    $laporan = "active";
+  }
+
 
 ?>
-
 
 
 
@@ -148,6 +154,13 @@ $uri_segment1 = $this->uri->segment(2);
           </li>
 
              <?php } ?>
+
+             <li class="nav-item">
+            <a href="<?php echo base_url('laporan') ?>" class="nav-link <?= $laporan ?>">
+              <i class="nav-icon fas fa-folder"></i>&nbsp;
+                Laporan
+            </a>
+          </li>
 
              <li class="nav-item">
             <a href="<?php echo base_url(). 'login/logout' ?>" class="nav-link">
