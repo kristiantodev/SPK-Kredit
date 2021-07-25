@@ -15,7 +15,7 @@ class Subkriteria extends CI_Controller{
 
 	public function input()
 	{
-		$data['kriteria'] = $this->subkriteria_model->tampil_data('kriteria')->result();
+		$data['kriteria'] = $this->db->get('kriteria')->result();
 		$this->load->view('templates_kredit/header');
  		$this->load->view('templates_kredit/sidebar');
  		$this->load->view('bagiankredit/subkriteria_form',$data);
