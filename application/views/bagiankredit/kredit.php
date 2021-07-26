@@ -33,6 +33,7 @@
                   <thead>
                      <tr>
                         <th>No</th>
+                        <th>NIK</th>
                         <th>Nama Nasabah</th>
                         <th>Tanggal Kredit</th>
                         <th>Usia</th>
@@ -49,6 +50,7 @@
                 foreach ($kredit as $krt) :?>
                   <tr>
                      <td><?php echo $no++ ?></td>
+                     <td><?php echo $krt->nik ?></td>
                     <td><?php echo $krt->nama_nasabah ?></td>
                     <td><?php echo $krt->tgl_kredit ?></td>
                     <td><?php echo $krt->nama_sub1 ?></td>
@@ -94,7 +96,7 @@
                           <select name="id_alternatif" id="select" required class="custom-select">
                   <option value="">-- Pilih Nasabah --</option>
                   <?php foreach ($nasabah as $n): ?>
-                  <option value="<?php echo $n->id_alternatif ?>"><?php echo $n->nama_nasabah ?></option>
+                  <option value="<?php echo $n->id_alternatif ?>"><?php echo $n->nik ?> - <?php echo $n->nama_nasabah ?></option>
                   <?php endforeach; ?>
                 </select>
                         </fieldset>

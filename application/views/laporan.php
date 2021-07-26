@@ -33,13 +33,36 @@ function printDiv(elementId) {
       <div class="container-fluid">
         <div class="card">
             <div class="card-header">
-               <a data-toggle="modal" data-target="#bb2">
+              <form class="form-horizontal" action="" method="get">
+            <div class="row clearfix">
+              <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                <label for="jenis">Dari Tanggal : </label>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-8 col-xs-7">
+                                <input type="date" name="start_date">
+              </div>
+              <div class="col-lg-2 col-md-1 col-sm-1 col-xs-1 form-control-label">
+                <label for="tahun">Sampai Tanggal : </label>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                <input type="date" name="end_date">
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                <button type="submit" name="submitted" value="filter" class="btn btn-info"><i class="fas fa-search"></i> <span>Filter</span></button>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+                 <a data-toggle="modal" data-target="#bb2">
                                             <button type="button" class="btn btn-info waves-effect waves-light">
                                     <i class="fa fa-print"></i> &nbsp;&nbsp;Cetak Laporan</button>
                                 </a>
+              </div>
+            </div>
+          </form>
+              
             </div>
             <div class="card-body" >
-
+ Report Date : <?php echo $dari ?> - <?php echo $sampai ?>
               <div class="table-responsive">
                 <table class="table table-bordered table-striped">
                   <thead>
@@ -107,6 +130,7 @@ function printDiv(elementId) {
                            <center><img src="<?php echo base_url() ?>assets/image/nasari.png" alt="" height="135"></center>
 <center><h5><b>Laporan <br>Hasil Keputusan Permohonan Kredit</b></h5></center>
  <div class="table-responsive">
+  Report Date : <?php echo $dari ?> - <?php echo $sampai ?>
                 <table class="table table-bordered table-striped">
                   <thead>
                      <tr>

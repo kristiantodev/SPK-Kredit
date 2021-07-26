@@ -17,7 +17,7 @@ class kredit extends CI_Controller {
 		$query3 = $this->db->query("SELECT * FROM subkriteria WHERE nama_kriteria='Besar Gaji'");
 		$query4 = $this->db->query("SELECT * FROM subkriteria WHERE nama_kriteria='Besar Pinjaman'");
 		$query5 = $this->db->query("SELECT * FROM subkriteria WHERE nama_kriteria='Riwayat nasabah'");
-        $query6 = $this->db->query("SELECT alternatif.nama_nasabah, kredit.aproved, kredit.tgl_kredit, k1.nama_sub as nama_sub1, k2.nama_sub as nama_sub2, k3.nama_sub as nama_sub3, k4.nama_sub as nama_sub4, k5.nama_sub as nama_sub5 
+        $query6 = $this->db->query("SELECT alternatif.nama_nasabah, kredit.aproved, kredit.tgl_kredit, k1.nama_sub as nama_sub1, k2.nama_sub as nama_sub2, k3.nama_sub as nama_sub3, k4.nama_sub as nama_sub4, k5.nama_sub as nama_sub5, alternatif.nik 
             FROM kredit INNER JOIN alternatif ON kredit.id_alternatif = alternatif.id_alternatif
             INNER JOIN subkriteria as k1 ON k1.id_sub = kredit.c1
             INNER JOIN subkriteria as k2 ON k2.id_sub = kredit.c2

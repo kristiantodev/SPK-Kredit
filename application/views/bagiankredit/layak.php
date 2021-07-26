@@ -28,6 +28,7 @@
                 <table class="table table-bordered table-striped">
                   <thead>
                      <tr>
+                      <th>NIK</th>
                         <th>Alternatif</th>
                         <th>Tanggal Kredit</th>
                         <th>Usia (C1)</th>
@@ -42,6 +43,7 @@
                 $no = 1;
                 foreach ($kredit as $krt) :?>
                   <tr>
+                    <td><?php echo $krt->nik ?></td>
                     <td><?php echo $krt->nama_nasabah ?></td>
                     <td><?php echo $krt->tgl_kredit ?></td>
                     <td><?php echo $krt->nama_sub1 ?></td>
@@ -61,6 +63,7 @@
                 <table class="table table-bordered table-striped">
                   <thead>
                      <tr>
+                      <th>NIK</th>
                         <th>Alternatif</th>
                         <th>Tanggal Kredit</th>
                         <th>C1</th>
@@ -75,6 +78,7 @@
                 $no = 1;
                 foreach ($kredit as $krt) :?>
                   <tr>
+                    <td><?php echo $krt->nik ?></td>
                     <td><?php echo $krt->nama_nasabah ?></td>
                     <td><?php echo $krt->tgl_kredit ?></td>
                     <td><?php echo $krt->bobot1 ?></td>
@@ -95,6 +99,7 @@
                 <table class="table table-bordered table-striped">
                   <thead>
                      <tr>
+                      <th>NIK</th>
                         <th>Alternatif</th>
                         <th>Tanggal Kredit</th>
                         <th>C1</th>
@@ -109,6 +114,7 @@
                 $no = 1;
                 foreach ($kredit as $krt) :?>
                   <tr>
+                    <td><?php echo $krt->nik ?></td>
                     <td><?php echo $krt->nama_nasabah ?></td>
                     <td><?php echo $krt->tgl_kredit ?></td>
                     <td><?php echo $krt->bobot_global1 ?></td>
@@ -129,6 +135,7 @@
                 <table class="table table-bordered table-striped">
                   <thead>
                      <tr>
+                      <th>NIK</th>
                         <th>Alternatif</th>
                         <th>Tanggal Kredit</th>
                         <th>S</th>
@@ -185,6 +192,7 @@
                     <input type="hidden" name="vektor<?php echo $i; ?>"  value="<?php echo $vektor ?>" class="form-control">
                     <input type="hidden" name="keputusan<?php echo $i; ?>"  value="<?php echo $kelayakan ?>" class="form-control">
                   <tr>
+                    <td><?php echo $krt->nik ?></td>
                     <td><?php echo $krt->nama_nasabah ?></td>
                     <td><?php echo $krt->tgl_kredit ?></td>
                     <td><?php echo $krt->nilai_s ?></td>

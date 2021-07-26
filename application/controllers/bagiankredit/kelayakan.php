@@ -13,7 +13,7 @@ class kelayakan extends CI_Controller {
 	public function index()
 	{
         $query = $this->db->query("SELECT alternatif.nama_nasabah, kredit.aproved, kredit.tgl_kredit, k1.nama_sub as nama_sub1, k2.nama_sub as nama_sub2, k3.nama_sub as nama_sub3, k4.nama_sub as nama_sub4, k5.nama_sub as nama_sub5, k1.bobot_sub as bobot1, k2.bobot_sub as bobot2 , k3.bobot_sub as bobot3 , k4.bobot_sub as bobot4 , k5.bobot_sub as bobot5, k1.bobot_global as bobot_global1, k2.bobot_global as bobot_global2, k3.bobot_global as bobot_global3,
-            k4.bobot_global as bobot_global4, k5.bobot_global as bobot_global5      
+            k4.bobot_global as bobot_global4, k5.bobot_global as bobot_global5, alternatif.nik      
             FROM kredit INNER JOIN alternatif ON kredit.id_alternatif = alternatif.id_alternatif
             INNER JOIN subkriteria as k1 ON k1.id_sub = kredit.c1
             INNER JOIN subkriteria as k2 ON k2.id_sub = kredit.c2
@@ -23,7 +23,7 @@ class kelayakan extends CI_Controller {
 
         $query2 = $this->db->query("SELECT alternatif.nama_nasabah, kredit.aproved, kredit.tgl_kredit, k1.nama_sub as nama_sub1, k2.nama_sub as nama_sub2, k3.nama_sub as nama_sub3, k4.nama_sub as nama_sub4, k5.nama_sub as nama_sub5, k1.bobot_sub as bobot1, k2.bobot_sub as bobot2 , k3.bobot_sub as bobot3 , k4.bobot_sub as bobot4 , k5.bobot_sub as bobot5, k1.bobot_global as bobot_global1, k2.bobot_global as bobot_global2, k3.bobot_global as bobot_global3,
             k4.bobot_global as bobot_global4, k5.bobot_global as bobot_global5, 
-            ROUND((POW(k1.bobot_sub, k1.bobot_global))*(POW(k2.bobot_sub,k2.bobot_global))*(POW(k3.bobot_sub ,k3.bobot_global))*(POW(k4.bobot_sub,k4.bobot_global))*(POW(k5.bobot_sub,k5.bobot_global)),3) AS nilai_s, kredit.aproved, kredit.id_kredit       
+            ROUND((POW(k1.bobot_sub, k1.bobot_global))*(POW(k2.bobot_sub,k2.bobot_global))*(POW(k3.bobot_sub ,k3.bobot_global))*(POW(k4.bobot_sub,k4.bobot_global))*(POW(k5.bobot_sub,k5.bobot_global)),3) AS nilai_s, kredit.aproved, kredit.id_kredit, alternatif.nik       
             FROM kredit INNER JOIN alternatif ON kredit.id_alternatif = alternatif.id_alternatif
             INNER JOIN subkriteria as k1 ON k1.id_sub = kredit.c1
             INNER JOIN subkriteria as k2 ON k2.id_sub = kredit.c2
